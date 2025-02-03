@@ -73,7 +73,7 @@ class TaskItemWidget extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: dropdownItemsColor[
-                          _getStatusColor(taskModel.status!)],
+                      _getStatusColor(taskModel.status!)],
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -96,7 +96,7 @@ class TaskItemWidget extends StatelessWidget {
                         ),
                         items: List.generate(
                           dropdownItems.length,
-                          (index) {
+                              (index) {
                             return DropdownMenuItem<String>(
                               value: dropdownItems[index],
                               child: Container(

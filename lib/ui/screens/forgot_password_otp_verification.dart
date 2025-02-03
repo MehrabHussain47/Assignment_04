@@ -60,13 +60,13 @@ class _ForgorPasswordOtpVerificationState
                   onPressed: _inProgress == true ? _otpVerifyButton : null,
                   child: _inProgress == true
                       ? Icon(
-                          Icons.arrow_circle_right_outlined,
-                          color: Colors.white,
-                          size: 24,
-                        )
+                    Icons.arrow_circle_right_outlined,
+                    color: Colors.white,
+                    size: 24,
+                  )
                       : CircularProgressIndicator(
-                          color: AppColors.themColor,
-                        ),
+                    color: AppColors.themColor,
+                  ),
                 ),
                 SizedBox(height: 36),
                 Center(
@@ -128,7 +128,7 @@ class _ForgorPasswordOtpVerificationState
                 Navigator.pushNamedAndRemoveUntil(
                   context,
                   SignInScreen.name,
-                  (route) => false,
+                      (route) => false,
                 );
               },
           )
@@ -154,7 +154,7 @@ class _ForgorPasswordOtpVerificationState
     print('$otp $gmail');
 
     NetworkResponse response =
-        await NetworkCaller.getRequest(url: Urls.otpVerify(gmail, otp));
+    await NetworkCaller.getRequest(url: Urls.otpVerify(gmail, otp));
     _inProgress = true;
     if (response.isSuccess) {
       if (response.responseData!['status'] == "fail") {

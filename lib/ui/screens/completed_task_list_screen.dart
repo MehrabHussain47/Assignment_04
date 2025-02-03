@@ -89,7 +89,7 @@ class _CompletedTaskListScreenState extends State<CompletedTaskListScreen> {
     showSnackBarMessage(context, "Deleting....", true);
 
     NetworkResponse response =
-        await NetworkCaller.getRequest(url: Urls.deleteTask(_taskId!));
+    await NetworkCaller.getRequest(url: Urls.deleteTask(_taskId!));
     if (response.isSuccess) {
       showSnackBarMessage(context, "Task Deleted", true);
       completedTaskListModel?.taskList?.removeAt(index);

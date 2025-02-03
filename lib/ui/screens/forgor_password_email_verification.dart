@@ -64,13 +64,13 @@ class _ForgorPasswordEmailVerificationState
                     onPressed: _InProgress == true ? _verifygmailButton : null,
                     child: _InProgress == true
                         ? Icon(
-                            Icons.arrow_circle_right_outlined,
-                            color: Colors.white,
-                            size: 24,
-                          )
+                      Icons.arrow_circle_right_outlined,
+                      color: Colors.white,
+                      size: 24,
+                    )
                         : CircularProgressIndicator(
-                            color: AppColors.themColor,
-                          ),
+                      color: AppColors.themColor,
+                    ),
                   ),
                   SizedBox(height: 48),
                   Center(

@@ -52,7 +52,7 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
         backgroundColor: AppColors.themColor,
         onPressed: () {
           Navigator.pushNamed(context, AddNewTaskScreen.name).then(
-            (value) {
+                (value) {
               if (value == true) {
                 _getTaskCountByStatus(true);
                 print(value);
@@ -111,7 +111,7 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
             itemCount: taskCountByStatusModel?.taskByStatusList?.length ?? 0,
             itemBuilder: (context, index) {
               final TaskCountModel model =
-                  taskCountByStatusModel!.taskByStatusList![index];
+              taskCountByStatusModel!.taskByStatusList![index];
               return TaskStatusSummaryCount(
                 title: model.sId ?? '',
                 count: model.sum.toString(),
@@ -127,7 +127,7 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
     _getTaskCountByStatusInProgress = _inprogress;
     setState(() {});
     final NetworkResponse response =
-        await NetworkCaller.getRequest(url: Urls.taskCountByStatusUrl);
+    await NetworkCaller.getRequest(url: Urls.taskCountByStatusUrl);
     if (response.isSuccess) {
       taskCountByStatusModel =
           TaskCountByStatusModel.fromJson(response.responseData!);
@@ -146,7 +146,7 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
     _getNewTaskListInProgress = true;
     setState(() {});
     final NetworkResponse response =
-        await NetworkCaller.getRequest(url: Urls.taskListByStatusUrl('New'));
+    await NetworkCaller.getRequest(url: Urls.taskListByStatusUrl('New'));
     if (response.isSuccess) {
       newTaskListModel = TaskListByStatusModel.fromJson(response.responseData!);
     } else {
@@ -161,7 +161,7 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
     showSnackBarMessage(context, "Deleting....", true);
 
     NetworkResponse response =
-        await NetworkCaller.getRequest(url: Urls.deleteTask(_taskId!));
+    await NetworkCaller.getRequest(url: Urls.deleteTask(_taskId!));
     if (response.isSuccess) {
       showSnackBarMessage(context, "Task Deleted", true);
       newTaskListModel?.taskList?.removeAt(index);

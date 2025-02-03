@@ -85,7 +85,7 @@ class _ProgressTaskListScreenState extends State<ProgressTaskListScreen> {
     showSnackBarMessage(context, "Deleting....", true);
 
     NetworkResponse response =
-        await NetworkCaller.getRequest(url: Urls.deleteTask(_taskId!));
+    await NetworkCaller.getRequest(url: Urls.deleteTask(_taskId!));
     if (response.isSuccess) {
       showSnackBarMessage(context, "Task Deleted", true);
       progressTaskListModel?.taskList?.removeAt(index);

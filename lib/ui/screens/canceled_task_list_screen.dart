@@ -69,7 +69,7 @@ class _CanceledTaskListScreenState extends State<CanceledTaskListScreen> {
     _getCanceledTaskListInProgress = true;
     setState(() {});
     final NetworkResponse response =
-        await NetworkCaller.getRequest(url: Urls.taskListByStatusUrl('Cancel'));
+    await NetworkCaller.getRequest(url: Urls.taskListByStatusUrl('Cancel'));
     if (response.isSuccess) {
       canceledTaskListModel =
           TaskListByStatusModel.fromJson(response.responseData!);
@@ -85,7 +85,7 @@ class _CanceledTaskListScreenState extends State<CanceledTaskListScreen> {
     showSnackBarMessage(context, "Deleting....", true);
 
     NetworkResponse response =
-        await NetworkCaller.getRequest(url: Urls.deleteTask(_taskId!));
+    await NetworkCaller.getRequest(url: Urls.deleteTask(_taskId!));
     if (response.isSuccess) {
       showSnackBarMessage(context, "Task Deleted", true);
       canceledTaskListModel?.taskList?.removeAt(index);

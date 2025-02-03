@@ -116,16 +116,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 24),
                   ElevatedButton(
                     onPressed:
-                        signUpInProgress == true ? _ontabSignupButton : null,
+                    signUpInProgress == true ? _ontabSignupButton : null,
                     child: signUpInProgress == true
                         ? Icon(
-                            Icons.arrow_circle_right_outlined,
-                            color: Colors.white,
-                            size: 24,
-                          )
+                      Icons.arrow_circle_right_outlined,
+                      color: Colors.white,
+                      size: 24,
+                    )
                         : CircularProgressIndicator(
-                            color: AppColors.themColor,
-                          ),
+                      color: AppColors.themColor,
+                    ),
                   ),
                   SizedBox(height: 48),
                   Center(
@@ -196,7 +196,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         showSnackBarMessage(context, 'Registation successful!', true);
         Future.delayed(
           Duration(milliseconds: 500),
-          () => _signIn(),
+              () => _signIn(),
         );
       }
     } else {
@@ -236,7 +236,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       Navigator.pushNamedAndRemoveUntil(
         context,
         MainBottomNavScreen.name,
-        (route) => false,
+            (route) => false,
       );
     } else {
       Navigator.pop(context);

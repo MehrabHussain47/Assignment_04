@@ -77,16 +77,16 @@ class _SignInScreenState extends State<SignInScreen> {
                   SizedBox(height: 24),
                   ElevatedButton(
                     onPressed:
-                        signInProgress == true ? _ontabSignINButton : null,
+                    signInProgress == true ? _ontabSignINButton : null,
                     child: signInProgress == true
                         ? Icon(
-                            Icons.arrow_circle_right_outlined,
-                            color: Colors.white,
-                            size: 24,
-                          )
+                      Icons.arrow_circle_right_outlined,
+                      color: Colors.white,
+                      size: 24,
+                    )
                         : CircularProgressIndicator(
-                            color: AppColors.themColor,
-                          ),
+                      color: AppColors.themColor,
+                    ),
                   ),
                   SizedBox(height: 48),
                   Center(
@@ -169,7 +169,7 @@ class _SignInScreenState extends State<SignInScreen> {
       Navigator.pushNamedAndRemoveUntil(
         context,
         MainBottomNavScreen.name,
-        (route) => false,
+            (route) => false,
       );
     } else {
       showSnackBarMessage(

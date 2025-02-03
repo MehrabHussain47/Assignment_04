@@ -24,7 +24,7 @@ class RecovaryPasswordScreen extends StatefulWidget {
 class _RecovaryPasswordScreenState extends State<RecovaryPasswordScreen> {
   final TextEditingController _passTEController = TextEditingController();
   final TextEditingController _confirmpassTEController =
-      TextEditingController();
+  TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _inProgress = true;
 
@@ -86,8 +86,8 @@ class _RecovaryPasswordScreenState extends State<RecovaryPasswordScreen> {
                     child: _inProgress == true
                         ? Text('Confirm')
                         : CircularProgressIndicator(
-                            color: AppColors.themColor,
-                          ),
+                      color: AppColors.themColor,
+                    ),
                   ),
                   SizedBox(height: 48),
                   Center(
@@ -155,7 +155,7 @@ class _RecovaryPasswordScreenState extends State<RecovaryPasswordScreen> {
       Navigator.pushNamedAndRemoveUntil(
         context,
         SignInScreen.name,
-        (route) => false,
+            (route) => false,
       );
     } else {
       showSnackBarMessage(context, response.errorMessage, false);
